@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
-<!-- 1. 멤버 값 지정하는 방식 (1) setter 이용 -->
+<!-- 1. 멤버 값 지정하는 방식 (1)setter 이용 -->
 <bean id='member' class="ex02_xml_ref.MemberBean">
 	<property name="name" value="홍길동"></property>
 	<property name="age" value="23"></property>
@@ -12,20 +12,20 @@
 		<value>오늘도 뭐먹지</value>
 	</property>
 </bean>
-<!-- 2. 멤버 값 지정하는 방식 (2) constructor -->
+<!-- 1. 멤버 값 지정하는 방식 (2)constructor -->
 <bean id='member2' class="ex02_xml_ref.MemberBean">
 	<constructor-arg value="홍길자"> </constructor-arg>
 	<constructor-arg value="33"> </constructor-arg>
 	<constructor-arg > <value>ㅁㅁㅁㅁ</value> </constructor-arg>
 </bean>
 
-<!-- 3. Bean을 멤버로 지정시_생성자 이용  -->
+<!-- 2. Bean을 멤버로 지정시 (1)생성자 이용  -->
 <!-- bean을 멤버로 지정시 ref 값으로 지정  -->
 <bean id='dao' class="ex02_xml_ref.MemberDAO">
 	<constructor-arg ref="member">  </constructor-arg>
 </bean>
 
-<!-- 3. Bean을 멤버로 지정시_setter 이용  -->
+<!-- 2. Bean을 멤버로 지정시 (2)setter 이용  -->
 <bean id='dao2' class="ex02_xml_ref.MemberDAO">
 	<property name='member' ref="member2"></property>
 </bean>

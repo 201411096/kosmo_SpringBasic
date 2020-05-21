@@ -36,4 +36,7 @@ Spring Bean Attribute
 		ㄴ index와 name 속성을 이용해서 애매한 parameter를 지정가능
 	ㄴ property : 생성시 bean setter에 전달할 인수
 	ㄴ init method와 destroy method
-	
+--------------------------------------------------------------------------------
+Spring Bean pvalue
+	ㄴ namespace에서 p체크 혹은 beans에 xmlns:p~추가
+	ㄴ 쓸 일이 많지 않음	
