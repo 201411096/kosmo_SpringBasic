@@ -13,8 +13,12 @@
 </bean>
 
 <bean id='outputer' class="ex06_autowiring.OutputerImpl">
-	<property name="path" value="src/ex06_autowiring/save1.txt"></property>
+	<property name="path" value="src/ex06_autowiring/save.txt"></property>
 <!-- 	<property name="path" value="src\\ex06_autowiring\\save.txt"></property> -->
+</bean>
+
+<bean id='outputer2' class="ex06_autowiring.OutputerImpl">
+	<property name="path" value="src/ex06_autowiring/message.txt"></property>
 </bean>
 
 </beans>

@@ -1,12 +1,17 @@
 package ex06_autowiring;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class MessageBeanImpl implements MessageBean{
 	private String name;
 	private String message;
 	
-	@Autowired
+//	@Autowired
+//	@Qualifier("outputer2")
+	@Resource(name="outputer2")
 	private Outputer outputer;
 	
 	@Override

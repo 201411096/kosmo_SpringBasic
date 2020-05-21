@@ -47,5 +47,7 @@ Spring_Bean annotation
 	ㄴ <context:component-scan base-package="target_package"></context:component-scan>
 	ㄴ annotation 종류
 		ㄴ @Component : component임을 알림..
-		ㄴ @Autowired : 생성자 혹은 setter가 없어도 알아서 주입...(DI : Dependency Injection)
+		ㄴ @Autowired : 생성자 혹은 setter가 없이 주입해주는 어노테이션(DI : Dependency Injection)
+		ㄴ @Qualifier("지정하고싶은_id") : 동일한 클래스의 빈이 여러개일 경우 선택해주는 어노테이션
+		ㄴ @Resource(name="지정하고싶은_id") : autowired와 qualifier를 같이 사용한 효과
 	ㄴ bean을 이용해서 객체 생성시 클래스 이름에서 맨 앞글자를 소문자로 바꾼 형태로 자동으로 만들어줌

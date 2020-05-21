@@ -8,6 +8,7 @@ public class MainApp {
 		ApplicationContext context = new ClassPathXmlApplicationContext("ex06_autowiring/applicationContext.xml");
 		MessageBean bean = context.getBean("message", MessageBean.class);
 		
+		
 		bean.sayHello();
 	}
 }
