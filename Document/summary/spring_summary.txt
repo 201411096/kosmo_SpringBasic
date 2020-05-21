@@ -25,6 +25,7 @@ Spring DI
 		ㄴ ApplicationContext context = new ClassPathXmlApplicationContext(xml_file_name)
 			ㄴ 설정파일을 읽어옴
 		ㄴ context.getBean("", className.class);
+			ㄴ .class <-> .getClass()
 --------------------------------------------------------------------------------
 Spring_Bean Attribute
 	ㄴ class : 정규화된 자바 클래스 이름

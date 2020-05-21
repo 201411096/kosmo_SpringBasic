@@ -12,6 +12,7 @@
 		<config>src/ex03_xml_pvalue/applicationContext.xml</config>
 		<config>src/ex04_xml_list/applicationContext.xml</config>
 		<config>src/ex05_annotation/applicationContext.xml</config>
+		<config>src/ex06_autowiring/applicationContext.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
