@@ -13,5 +13,11 @@ public class MainApp {
 		
 		MemberBean bean2 = context.getBean("member2", MemberBean.class);
 		System.out.println(bean2.getName() + " / " + bean2.getAge() + " / " + bean2.getMessage());
+		
+		MemberDAO dao = context.getBean("dao", MemberDAO.class);
+		dao.insert();
+		
+		MemberDAO dao2 = context.getBean("dao2", MemberDAO.class);
+		dao2.insert();
 	}
 }

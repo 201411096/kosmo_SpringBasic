@@ -19,4 +19,14 @@
 	<constructor-arg > <value>ㅁㅁㅁㅁ</value> </constructor-arg>
 </bean>
 
+<!-- 3. Bean을 멤버로 지정시_생성자 이용  -->
+<!-- bean을 멤버로 지정시 ref 값으로 지정  -->
+<bean id='dao' class="ex02_xml_ref.MemberDAO">
+	<constructor-arg ref="member">  </constructor-arg>
+</bean>
+
+<!-- 3. Bean을 멤버로 지정시_setter 이용  -->
+<bean id='dao2' class="ex02_xml_ref.MemberDAO">
+	<property name='member' ref="member2"></property>
+</bean>
 </beans>

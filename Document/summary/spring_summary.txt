@@ -31,5 +31,9 @@ Spring Bean Attribute
 	ㄴ id : bean의 고유 식별자
 	ㄴ scope : 객체의 범위(singleton, prototype)
 	ㄴ construcotr-arg : 생성시 생성자에 전달할 인수
+		ㄴ bean을 생성자로 받을시에는 ref 속성에 지정 (***** value <-> ref *****)
+			ㄴ 사용예시 : <constructor-arg ref="member">  </constructor-arg>
+		ㄴ index와 name 속성을 이용해서 애매한 parameter를 지정가능
 	ㄴ property : 생성시 bean setter에 전달할 인수
 	ㄴ init method와 destroy method
+	
