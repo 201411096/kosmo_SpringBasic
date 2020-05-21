@@ -5,6 +5,7 @@ import java.util.List;
 public class ListBean {
 	private List<Integer> intlist;
 	private List<MemberBean> memberList;
+	
 	public List<Integer> getIntlist() {
 		return intlist;
 	}

@@ -26,7 +26,7 @@ Spring DI
 			ㄴ 설정파일을 읽어옴
 		ㄴ context.getBean("", className.class);
 --------------------------------------------------------------------------------
-Spring Bean Attribute
+Spring_Bean Attribute
 	ㄴ class : 정규화된 자바 클래스 이름
 	ㄴ id : bean의 고유 식별자
 	ㄴ scope : 객체의 범위(singleton, prototype)
@@ -37,6 +37,14 @@ Spring Bean Attribute
 	ㄴ property : 생성시 bean setter에 전달할 인수
 	ㄴ init method와 destroy method
 --------------------------------------------------------------------------------
-Spring Bean pvalue
+Spring_Bean pvalue
 	ㄴ namespace에서 p체크 혹은 beans에 xmlns:p~추가
 	ㄴ 쓸 일이 많지 않음	
+--------------------------------------------------------------------------------
+Spring_Bean annotation
+	ㄴ namespace에서 context추가
+	ㄴ <context:component-scan base-package="target_package"></context:component-scan>
+	ㄴ annotation 종류
+		ㄴ @Component : component임을 알림..
+		ㄴ @Autowired : 생성자 혹은 setter가 없어도 알아서 주입...(DI : Dependency Injection)
+	ㄴ bean을 이용해서 객체 생성시 클래스 이름에서 맨 앞글자를 소문자로 바꾼 형태로 자동으로 만들어줌

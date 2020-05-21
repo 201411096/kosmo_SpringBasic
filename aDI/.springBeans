@@ -10,6 +10,8 @@
 		<config>src/ex01_xml1/applicationContext.xml</config>
 		<config>src/ex02_xml_ref/applicationContext.xml</config>
 		<config>src/ex03_xml_pvalue/applicationContext.xml</config>
+		<config>src/ex04_xml_list/applicationContext.xml</config>
+		<config>src/ex05_annotation/applicationContext.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id='bean' class="ex04_xml_list.ListBean">
+<!-- setIntList()  -->
+	<property name="intlist">
+		<list>
+			<value>10</value>
+			<value>20</value>
+			<value>30</value>
+			<value>40</value>
+		</list>
+	</property> 
+<!-- setMemberList()  -->
+	<property name="memberList">
+		<list>
+			<ref bean="m1"></ref>
+			<ref bean="m2"></ref>
+		</list>
+	</property>
+</bean>
+
+<bean id='m1' class="ex04_xml_list.MemberBean">
+<!-- 생성자 이용해서 값 지정하기 -->
+	<constructor-arg name="name" value="홍길동"></constructor-arg>
+	<constructor-arg name="age" value="25"></constructor-arg>
+	<constructor-arg name="message" value="메시지1"></constructor-arg>
+</bean>
+<bean id='m2' class="ex04_xml_list.MemberBean">
+<!-- setter 이용해서 값 지정하기 -->
+	<property name="name" value="홍길자"></property>
+	<property name="message" value="메시지2"></property>
+</bean>
+</beans>
