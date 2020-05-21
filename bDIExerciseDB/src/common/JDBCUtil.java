@@ -5,11 +5,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import org.springframework.stereotype.Component;
+@Component
 public class JDBCUtil {
 	public static Connection getConnection() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			return DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:orcl", "javassem", "1234");
+			return DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.18:1521:orcl", "scott", "tiger");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

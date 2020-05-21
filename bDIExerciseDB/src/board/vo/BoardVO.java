@@ -2,7 +2,10 @@ package board.vo;
 
 import java.sql.Date;
 
+import org.springframework.stereotype.Component;
+
 //VO(Value Object)
+@Component
 public class BoardVO {
 	private int seq;
 	private String title;

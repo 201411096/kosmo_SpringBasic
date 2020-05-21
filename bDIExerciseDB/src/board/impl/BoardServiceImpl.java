@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import board.BoardService;
 import board.vo.BoardVO;
 
-
+@Service("boardService")
 public class BoardServiceImpl implements BoardService {
 	
-	
+	@Autowired
 	private BoardDAO boardDAO;
 
 	public void insertBoard(BoardVO vo) {

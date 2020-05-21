@@ -5,12 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import board.vo.BoardVO;
 import common.JDBCUtil;
 
-
+@Component
 public class BoardDAO {
 	// JDBC 관련 변수
 	private Connection conn = null;
