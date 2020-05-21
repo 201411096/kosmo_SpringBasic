@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+<!-- 1. 멤버 값 지정하는 방식 (1) setter 이용 -->
+<bean id='member' class="ex02_xml_ref.MemberBean">
+	<property name="name" value="홍길동"></property>
+	<property name="age" value="23"></property>
+<!-- 	속성을 여러개 줄 떄 아래처럼 사용 -->
+	<property name="message">
+		<value>오늘도 뭐먹지</value>
+	</property>
+</bean>
+<!-- 2. 멤버 값 지정하는 방식 (2) constructor -->
+<bean id='member2' class="ex02_xml_ref.MemberBean">
+	<constructor-arg value="홍길자"> </constructor-arg>
+	<constructor-arg value="33"> </constructor-arg>
+	<constructor-arg > <value>ㅁㅁㅁㅁ</value> </constructor-arg>
+</bean>
+
+</beans>

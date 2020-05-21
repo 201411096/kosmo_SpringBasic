@@ -14,8 +14,10 @@ Spring DI
 	ㄴ <bean>태그로 객체를 정의?..
 		ㄴ <bean id= 'bean_name' class='classpath'> </bean>
 			ㄴ scope='singleton'
-				ㄴ xml파일을 읽어들일 때 객체를 생성함(scope의 default값)
+				ㄴ xml파일을 읽어들일 때 객체를 생성함(scope의 default값)					
 				ㄴ 사용법 : <bean id= 'bean_name' class='classpath' scope='singleton'> </bean>
+				ㄴ spring의 singleton은 "Spring Container"에 의해 구현된다.
+					ㄴ thread safety를 자동으로 보장
 			ㄴ scope='prototype'
 				ㄴ getBean() 메소드 호출시에 객체를 생성함
 				ㄴ 사용법 : <bean id= 'bean_name' class='classpath' scope='prototype'> </bean>
@@ -23,3 +25,11 @@ Spring DI
 		ㄴ ApplicationContext context = new ClassPathXmlApplicationContext(xml_file_name)
 			ㄴ 설정파일을 읽어옴
 		ㄴ context.getBean("", className.class);
+--------------------------------------------------------------------------------
+Spring Bean Attribute
+	ㄴ class : 정규화된 자바 클래스 이름
+	ㄴ id : bean의 고유 식별자
+	ㄴ scope : 객체의 범위(singleton, prototype)
+	ㄴ construcotr-arg : 생성시 생성자에 전달할 인수
+	ㄴ property : 생성시 bean setter에 전달할 인수
+	ㄴ init method와 destroy method
