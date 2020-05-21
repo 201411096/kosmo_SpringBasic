@@ -1,5 +1,7 @@
 package exercise.order.domain;
 
+//DB 테이블 구조 - VO - DTO - Domain
+
 public class Customer {
 	private long id;
 	private String name;
