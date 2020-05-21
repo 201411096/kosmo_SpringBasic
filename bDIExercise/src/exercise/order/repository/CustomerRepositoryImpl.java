@@ -1,11 +1,12 @@
 package exercise.order.repository;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import exercise.order.domain.Customer;
 
 
-@Component
+//@Component
+@Repository
 public class CustomerRepositoryImpl implements CustomerRepository {
 
 

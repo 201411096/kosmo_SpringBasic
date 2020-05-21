@@ -1,13 +1,13 @@
 package exercise.order.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import exercise.order.domain.Customer;
 import exercise.order.repository.CustomerRepository;
-import exercise.order.repository.CustomerRepositoryImpl;
 
-@Component("service")
+//@Component("service")
+@Service("service")
 public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
