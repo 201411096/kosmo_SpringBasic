@@ -8,6 +8,7 @@
 <context:component-scan base-package="ex06_autowiring"></context:component-scan>
 
 <bean id='message' class='ex06_autowiring.MessageBeanImpl'>
+
 	<property name="name" value="홍길동"></property> <!-- setName() 호출   -->
 	<property name="message" value="메시지1"></property> <!-- setMessage() 호출  -->
 </bean>
