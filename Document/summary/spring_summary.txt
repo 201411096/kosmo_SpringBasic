@@ -1,0 +1,25 @@
+﻿--------------------------------------------------------------------------------
+스프링 프로젝트 생성
+	ㄴ 1. 스프링 프로젝트 생성
+	ㄴ 2. configure -> convert to maven project (pom.xml이 생성됨)
+	ㄴ 3. Spring -> add spring project nature
+	ㄴ 4. mvnrepository.com
+		ㄴ 4_1. spring context -> 다운로드가 많은 버전으로.. -> 5.2.0 RELEASE
+		ㄴ 4_2. pom.xml build 태그 아래에 dependencies 태그 안에 depency태그들로 작성을 하면 알아서 관련 라이브러리를 다운받아옴
+	ㄴ ***** 프로젝트명만 문제가 생기거나, pom.xml에 문제가 생겼을 경우
+		ㄴ m2.repository를 지우면 됨	
+--------------------------------------------------------------------------------
+Spring DI
+	ㄴ Spring Bean Configuration File 생성
+	ㄴ <bean>태그로 객체를 정의?..
+		ㄴ <bean id= 'bean_name' class='classpath'> </bean>
+			ㄴ scope='singleton'
+				ㄴ xml파일을 읽어들일 때 객체를 생성함(scope의 default값)
+				ㄴ 사용법 : <bean id= 'bean_name' class='classpath' scope='singleton'> </bean>
+			ㄴ scope='prototype'
+				ㄴ getBean() 메소드 호출시에 객체를 생성함
+				ㄴ 사용법 : <bean id= 'bean_name' class='classpath' scope='prototype'> </bean>
+	ㄴ 객체 생성법
+		ㄴ ApplicationContext context = new ClassPathXmlApplicationContext(xml_file_name)
+			ㄴ 설정파일을 읽어옴
+		ㄴ context.getBean("", className.class);
