@@ -2,9 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<!--
+	#{} : PreparedStatement 처럼 ''이 붙어서 나옴 
+	${}	: Statement 처럼
+  -->
 <mapper namespace="BoardDAO">
 	<insert id="insertBoard" parameterType="board.BoardVO">
 		INSERT INTO board(seq, title, writer, content, regdate, cnt) VALUES(board_seq.NEXTVAL, #{title}, #{writer}, #{content}, sysdate, 0)
 	</insert>
+	<select id="getBoardList" parameterType="board" resultType="board">
+		SELECT * FROM board
+		WHERE ${searchCondition} LIKE '%' || #{searchKeyword} || '%'
+		ORDER BY seq DESC
+	</select>
 
 </mapper>
