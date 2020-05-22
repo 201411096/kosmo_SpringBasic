@@ -59,13 +59,19 @@ Spring_Bean DI
 --------------------------------------------------------------------------------
 AOP
 	ㄴ 반복되는 작업들을 Advice로 묶어 원하는 호출지점인 각각의 pointcut에 weaving (기존에 반복되던 작업들을 method로 묶어서 호출하던 것과 다름)
-	ㄴ 구조
+	ㄴ xml 구조
 		ㄴ <aop:config>
 			<aop:pointcut expression="execution(access_modifier return_type_expression file_path_expression method_expression(param_type_expression) )"></aop:pointcut>
+				ㄴ param_type_expression : (..) -> 매개변수를 신경쓰지 않음
 			<aop:aspect id='my_aspect_id' ref='my_advice_id' order='my_aspect_sequence'>
 				<aop:~>
-					ㄴ
+					ㄴaop:의 종류 : aop:before, aop:around ..
 				</aop:~>
 			</aop:aspect>
 		    </aop:config>
+	ㄴ annotation 방식
+		ㄴ In XML : Spring 내부적으로 자동연결하는 방법
+			ㄴ <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+		ㄴ @Around("execution(access_modifier return_type_expression file_path_expression method_expression(param_type_expression) )")
+		ㄴ @Aspect : Around annotation이 붙어있는 객체의 앞에 @Component와 같이 붙임
 	
