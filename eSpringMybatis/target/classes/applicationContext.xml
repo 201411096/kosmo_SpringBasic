@@ -6,11 +6,19 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
 	<!-- 자동 빈 생성  -->
-
+	<context:component-scan base-package="board.impl"></context:component-scan>
 	<!-- DataSource 설정 -->
-
-	<!-- Spring과 Mybatis 연동 설정 -->
+	<context:property-placeholder location="classpath:config/db.properties"/>
 	
-
-
+	<!-- dataSource 설정시 id값이 dataSource로 고정해야됨  -->
+	<!-- org.apache.commons.dbcp.BasicDataSource는 maven의 jar파일들에 포함되어 있는 클래스임  -->
+	<!-- destroy-method는 자동으로 close줌  -->
+	<bean id='dataSource' class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driver}"></property>
+		<!-- setDriverClassName() 호출  -->
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+	</bean>
+	<!-- Spring과 Mybatis 연동 설정 -->
 </beans>

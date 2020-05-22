@@ -1,7 +1,9 @@
-﻿#{} <-> ${} 차이점
+﻿--------------------------------------------------
+#{} <-> ${} 차이점
 	ㄴ #{} : PreparedStatement
 	ㄴ ${} : Statement
 	ㄴ 예시
 		ㄴ SELECT * FROM board WHERE #{searchCondition} LIKE '%' || #{searchKeyword} || '%' ORDER BY seq DESC 
 			ㄴ 오류 발생
 		ㄴ SELECT * FROM board WHERE ${searchCondition} LIKE '%' || #{searchKeyword} || '%' ORDER BY seq DESC
+--------------------------------------------------

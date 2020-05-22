@@ -5035,3 +5035,18 @@ java.util.concurrent.TimeoutException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-22 14:37:36.985
 !MESSAGE executing callback sts4.classpath.pcfaOhJa SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-22 14:56:29.696
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-22 14:56:29.701
+!MESSAGE classpath=34 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-22 14:56:29.707
+!MESSAGE buffering callback sts4.classpath.pcfaOhJa eSpringMybatis false 34
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-22 14:56:29.711
+!MESSAGE executing callback sts4.classpath.pcfaOhJa 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-22 14:56:29.718
+!MESSAGE executing callback sts4.classpath.pcfaOhJa SUCCESS [done]

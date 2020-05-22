@@ -8,10 +8,11 @@ import org.springframework.stereotype.Repository;
 
 import board.BoardVO;
 
-
+@Repository("boardDAO")
 public class BoardDAOMybatis {
-
-	private SqlSessionTemplate mybatis;
+	
+	@Autowired
+	private SqlSessionTemplate mybatis; // 연결객체
 
 	public void insertBoard(BoardVO vo) {
 		System.out.println("===> Mybatis insertBoard() 호출");
