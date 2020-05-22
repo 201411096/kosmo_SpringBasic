@@ -7,3 +7,8 @@
 			ㄴ 오류 발생
 		ㄴ SELECT * FROM board WHERE ${searchCondition} LIKE '%' || #{searchKeyword} || '%' ORDER BY seq DESC
 --------------------------------------------------
+spring mybatis 연동
+
+1. Datasource 설정
+2. Datasource setting
+3. sqlSession ()
