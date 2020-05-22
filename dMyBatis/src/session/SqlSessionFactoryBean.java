@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+//JDBC : Connection <-> Mybatis : SqlSession
 public class SqlSessionFactoryBean {
 	private static SqlSessionFactory sessionFactory = null;
 	static {
