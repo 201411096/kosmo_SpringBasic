@@ -1,0 +1,6 @@
+﻿0522_금요일
+
+1. AOP 개념
+2. Spring + DB
+	ㄴ Spring JDBC (x)
+	ㄴ Spring Mybatis (o)

@@ -9,7 +9,7 @@
 	ㄴ ***** 프로젝트명만 문제가 생기거나, pom.xml에 문제가 생겼을 경우
 		ㄴ m2.repository를 지우면 됨	
 --------------------------------------------------------------------------------
-Spring DI
+DI
 	ㄴ Spring Bean Configuration File 생성
 	ㄴ <bean>태그로 객체를 정의?..
 		ㄴ <bean id= 'bean_name' class='classpath'> </bean>
@@ -56,3 +56,16 @@ Spring_Bean annotation
 Spring_Bean DI
 	ㄴ Autowired : setter, constructor가 없지만 Spring 내부적으로 객체를 관리해주고 그 객체를 인지하고 있음
 		ㄴ 의존성 주입(Dependancy Injection)
+--------------------------------------------------------------------------------
+AOP
+	ㄴ 반복되는 작업들을 Advice로 묶어 원하는 호출지점인 각각의 pointcut에 weaving (기존에 반복되던 작업들을 method로 묶어서 호출하던 것과 다름)
+	ㄴ 구조
+		ㄴ <aop:config>
+			<aop:pointcut expression="execution(access_modifier return_type_expression file_path_expression method_expression(param_type_expression) )"></aop:pointcut>
+			<aop:aspect id='my_aspect_id' ref='my_advice_id' order='my_aspect_sequence'>
+				<aop:~>
+					ㄴ
+				</aop:~>
+			</aop:aspect>
+		    </aop:config>
+	
