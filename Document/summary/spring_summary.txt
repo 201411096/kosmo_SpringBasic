@@ -78,8 +78,33 @@ Spring_Bean DI
 	ㄴ Autowired : setter, constructor가 없지만 Spring 내부적으로 객체를 관리해주고 그 객체를 인지하고 있음
 		ㄴ 의존성 주입(Dependancy Injection)
 --------------------------------------------------------------------------------
-AOP
+AOP : Aspect Oriented Programming
+	ㄴ 핵심기능(Business Logic)과 횡단관심사(Cross-Cutting Concern)
+		ㄴ Business Logic : 업무 로직을 포함하는 기능
+		ㄴ Cross-Cutting Concern : 핵심기능을 도와주는 부가기능
+			ㄴ Logging
+			ㄴ Security
+			ㄴ Transaction
+	ㄴ Application에서의 핵심적인 기능에서 부가적인 기능을 분리
+		ㄴ 분리한 부가기능을 Aspect라는 독특한 Module의 형태로 만들어서 설계하고 개발하는 방법
 	ㄴ 반복되는 작업들을 Advice로 묶어 원하는 호출지점인 각각의 pointcut에 weaving (기존에 반복되던 작업들을 method로 묶어서 호출하던 것과 다름)
+--------------------------------------------------------------------------------
+AOP 용어
+	ㄴ 타겟(Target) : 핵심기능을 담고 있는 모듈로, 타겟은 부가기능을 부여할 대상
+	ㄴ 어드바이스(Advice) : 횡단관심사를 실제로 구현해서 처리하는 부분
+	ㄴ 조인 포인트(Join Point) : 횡단관심사가 실행되는 시점
+	ㄴ 포인트컷(PointCut) : Advice를 적용할 Target의 method를 선별하는 정규표현식(Regular Expression)
+	ㄴ Aspect : AOP의 단위가 되는 횡단관심사
+	ㄴ Weaving : 위빙은 포인트컷에 의해서 결정된 타켓의 조인포인트에 부가기능을 삽입하는 과정
+--------------------------------------------------------------------------------
+AOP Advice의 종류
+	ㄴ Around : JoinPoint 의 앞과 뒤에서 실행되는 Advice
+	ㄴ Before
+	ㄴ After
+	ㄴ After Returning : Joinpoint 메소드 호출이 정상적으로 종료된 뒤에 실행되는 Advice
+	ㄴ After Throwing : 예외가 던져질 때 실행되는 Advice
+--------------------------------------------------------------------------------
+AOP 사용 예시
 	ㄴ xml 구조
 		ㄴ <aop:config>
 			<aop:pointcut expression="execution(access_modifier return_type_expression file_path_expression method_expression(param_type_expression) )"></aop:pointcut>
