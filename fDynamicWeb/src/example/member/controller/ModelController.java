@@ -16,5 +16,6 @@ public class ModelController {
 	 * 1. ModelAndView 객체 이용
 	 * 2. Map 객체 (자바의 HashMap)
 	 * 3. Model 객체 ********** ModelAndView 혹은 HashMap처럼 return으로 넘기는 게 아니고 인자로 지정함 **********
+	 * 4. ModelAttribute 이용
 	 */
 }

@@ -1,7 +1,28 @@
 ﻿0525_월요일
 
 1. Web Spring
+----------------------------------------
+1, 컨트롤러 ( Controller ) 만들기
+	ㄴ @Controller
+	ㄴ <context:component-scan ~/>
 
+2. 요청 매칭
+	ㄴ @RequestMapping("요청명")
+
+3. 이전화면에서 넘어오는 값은 함수의 인자에 지정 (변수명 맞추기)
+
+4. 뷰페이지 지정
+	ㄴ 1. 리턴형이 String인 경우
+	ㄴ 2. 리턴형이 void인 경우 - 요청명과 동일한 뷰페이지로 지정됨
+	ㄴ 3. ModelAndView의 setVIewName() 이용
+
+5. 뷰페이지 데이터 넘기기
+	ㄴ 1. ModelAndView 객체
+	ㄴ 2. Model 객체
+	ㄴ 3. 자바의 Map 객체
+	ㄴ 4. @ModelAttribute 이용
+
+6. 뷰페이지 받은 데이터 출력 - EL(jstl)로 출력
 ----------------------------------------
 팀프로젝트
 	ㄴ 3. 화면설계서
