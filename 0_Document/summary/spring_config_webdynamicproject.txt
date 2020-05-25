@@ -1,0 +1,39 @@
+﻿----------------------------------------
+프로젝트 생성 순서
+1. new web dynamic project 
+2. new runtime server -> jre 변경
+3. Configure > Convert to Maven
+4. Spring > Add spring nature
+5. 프로젝트 next로 끝까지 -> Generate web.xml deployment descriptor 체크
+6. pom.xml에 spring mvc web 라이브러리 추가 ( pom.xml 제공 )
+7. spring servlet 설정
+8. springMVC-servlet.xml(applicationContext.xml) 파일 추가
+----------------------------------------
+7. spring servlet 설정
+7_1. WEB-INF -> web.xml
+7_2. 
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>fDynamicWeb</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- Spring Servlet 설정-->
+  <servlet>
+  	<servlet-name>springMVC</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  	<init-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>/WEB-INF/springConfig/springMVC-servlet.xml</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>springMVC</servlet-name>
+  	<url-pattern>*.do</url-pattern>	// 이 부분만 수정해주면 됨
+  </servlet-mapping>
+</web-app>
+----------------------------------------
+8. applicationContext.xml 파일 추가
+8_1. WEB-INF 폴더에 springConfig 폴더 생성
+8_2. springConfig 폴더 안에  springMVC-servlet.xml(applicationContext.xml) 파일 생성
+8_3. servlet 부분에 init-param 부분 추가(7.2 부분에 코드 추가되어있음)
