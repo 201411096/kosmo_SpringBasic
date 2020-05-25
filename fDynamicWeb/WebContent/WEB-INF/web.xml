@@ -11,7 +11,10 @@
   </listener>
   <context-param>
   	<param-name>contextConfigLocation</param-name>
-  	<param-value>/WEB-INF/springConfig/common-servlet.xml</param-value>
+  	<param-value>
+  		/WEB-INF/springConfig/common-servlet.xml
+  		<!-- 추가가능  -->
+  	</param-value>
   </context-param>
   <!-- Spring Servlet 설정-->
   <servlet>
@@ -26,4 +29,18 @@
   	<servlet-name>springMVC</servlet-name>
   	<url-pattern>*.do</url-pattern>
   </servlet-mapping>
+  
+  <!-- 한글 인코딩  -->
+  <filter>
+  	<filter-name>characterEncoding</filter-name>
+  	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>characterEncoding</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>

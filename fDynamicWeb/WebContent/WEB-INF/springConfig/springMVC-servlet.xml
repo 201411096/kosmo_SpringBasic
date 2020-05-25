@@ -8,9 +8,9 @@
 	<bean class="spring.sample.HelloController"></bean>
 	
 	<bean id='memberVO' class="example.member.model.MemberVO">
-		<property name="id" value="12345"></property>
-		<property name="name" value="홍길동"></property>
-		<property name="age" value="22"></property>
+<!-- 		<property name="id" value="12345"></property> -->
+<!-- 		<property name="name" value="홍길동"></property> -->
+<!-- 		<property name="age" value="22"></property> -->
 	</bean>
 	
 	<!-- example.member autoscan -->

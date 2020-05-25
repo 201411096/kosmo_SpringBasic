@@ -73,7 +73,15 @@ Spring_Bean Annotation
 			ㄴ @Repository : 데이터베이스 연동을 처리하는 DAO 클래스
 			ㄴ @Controller : 사용자 요청을 제어하는 Controller 클래스
 		ㄴ @RequestMapping : controller 클래스 내부 메소드들에서 사용
+			ㄴ requestMapping한 함수에 return형이 String인 경우 : ViewPage를 지정한 것임
+				ㄴ requestMapping한 함수가 void인 경우 : 요청과 동일한 이름의 ViewPage를 지정함
 			ㄴ 사용예시 : @RequestMapping("/start.do") // start.do url이 들어올경우에만 mapping을 함
+			ㄴ 사용예시2 : @RequestMapping(value={"/a.do", "/b.do"})
+			ㄴ 쿼리스트링으로 넘어오는 값들은 requestMapping한 함수의 parameter로 받아올 수 있음
+				ㄴ 사용예시1_1 : <a href="board/c.do?id=kim">요청3</a>
+				ㄴ 사용예시1_2 : public void test2(String id) --> 위의 parameter id값을 가져옴
+			ㄴ JSTL에서 parameter로 넘겨받은 값들을 받는법
+				ㄴ ${param.param_name}
 	ㄴ bean을 이용해서 객체 생성시 클래스 이름에서 맨 앞글자를 소문자로 바꾼 형태로 자동으로 만들어줌
 --------------------------------------------------------------------------------
 Spring_Bean DI
