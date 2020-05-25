@@ -58,10 +58,10 @@ Spring_Bean pvalue
 	ㄴ namespace에서 p체크 혹은 beans에 xmlns:p~추가
 	ㄴ 쓸 일이 많지 않음	
 --------------------------------------------------------------------------------
-Spring_Bean Annotation)
+Spring_Bean Annotation
 	ㄴ namespace에서 context추가
 		ㄴ 사용예시 : <context:component-scan base-package="target_package"></context:component-scan>
-	ㄴ Annotation)종류
+	ㄴ Annotation 종류
 		ㄴ @Component : component임을 알림..
 			ㄴ@Component("별칭") : 클래스명에서 앞글자만 소문자로 바뀐 id외에 별칭으로 id를 지정하고 싶을 경우에 사용
 		ㄴ @Autowired : 생성자 혹은 setter가 없이 주입해주는 어노테이션(DI : Dependency Injection)
@@ -71,7 +71,9 @@ Spring_Bean Annotation)
 		ㄴ 클래스를 분류하기 위한 Annotation(기본적으로 @Component를 상속한 Annotation)
 			ㄴ @Service : 비즈니스 로직을 처리하는 Serivce 클래스임을 알림
 			ㄴ @Repository : 데이터베이스 연동을 처리하는 DAO 클래스
-			ㄴ @Controller : 사용자 요청을 제어하는 Controller 클래스 
+			ㄴ @Controller : 사용자 요청을 제어하는 Controller 클래스
+		ㄴ @RequestMapping : controller 클래스 내부 메소드들에서 사용
+			ㄴ 사용예시 : @RequestMapping("/start.do") // start.do url이 들어올경우에만 mapping을 함
 	ㄴ bean을 이용해서 객체 생성시 클래스 이름에서 맨 앞글자를 소문자로 바꾼 형태로 자동으로 만들어줌
 --------------------------------------------------------------------------------
 Spring_Bean DI
@@ -120,4 +122,4 @@ AOP 사용 예시
 			ㄴ <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 		ㄴ @Around("execution(access_modifier return_type_expression file_path_expression method_expression(param_type_expression) )")
 		ㄴ @Aspect : Around annotation이 붙어있는 객체의 앞에 @Component와 같이 붙임
-	
+--------------------------------------------------------------------------------

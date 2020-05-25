@@ -1,4 +1,4 @@
-﻿----------------------------------------
+﻿--------------------------------------------------------------------------------
 프로젝트 생성 순서
 1. new web dynamic project 
 2. new runtime server -> jre 변경
@@ -6,9 +6,6 @@
 4. Spring > Add spring nature
 5. 프로젝트 next로 끝까지 -> Generate web.xml deployment descriptor 체크
 6. pom.xml에 spring mvc web 라이브러리 추가 ( pom.xml 제공 )
-7. spring servlet 설정
-8. springMVC-servlet.xml(applicationContext.xml) 파일 추가
-----------------------------------------
 7. spring servlet 설정
 7_1. WEB-INF -> web.xml
 7_2. 
@@ -18,7 +15,7 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  <!-- Spring Servlet 설정-->
+  <!-- Spring Servlet 설정 ( DispatcherServlet ) -->
   <servlet>
   	<servlet-name>springMVC</servlet-name>
   	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -32,8 +29,43 @@
   	<url-pattern>*.do</url-pattern>	// 이 부분만 수정해주면 됨
   </servlet-mapping>
 </web-app>
-----------------------------------------
 8. applicationContext.xml 파일 추가
 8_1. WEB-INF 폴더에 springConfig 폴더 생성
 8_2. springConfig 폴더 안에  springMVC-servlet.xml(applicationContext.xml) 파일 생성
 8_3. servlet 부분에 init-param 부분 추가(7.2 부분에 코드 추가되어있음)
+--------------------------------------------------------------------------------
+DispatcherServlet
+	ㄴ Spring MVC는 DispatcherServlet이 등장함에 따라 web.xml의 역할을 상당히 축소시켜주었습니다. 기존에는 모든 서블릿에 대해 URL 매핑을 활용하기 위해서 web.xml에 모두 등록해주어야 했지만, dispatcher-servlet이 해당 어플리케이션으로 들어오는 모든 요청을 핸들링해주면서 작업을 상당히 편리하게 할 수 있게 되었습니다.
+--------------------------------------------------------------------------------
+ModelAndView
+	ㄴ requestMapping을 해둔 메소드가 불려졌을 경우에 return ModelAndView를 할 경우 .setViewName()시 세팅했던 해당 페이지로 이동함
+	ㄴ setViewName()
+		ㄴ public void setViewName(@Nullable String viewName)
+		ㄴ 반환할 페이지를 지정
+		ㄴ viewResolver 사용시 view역할을 하는 jsp파일의 경로를 전부 사용하지 않아도 됨
+			ㄴ viewResolver : org.springframework.web.servlet.view.InternalResourceViewResolver
+				ㄴ property 태그(suffix, prefix)를 bean 태그로 감싸줌
+				ㄴ <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">	
+			ㄴ suffix : 경로의 뒷부분에 해당
+				ㄴ 사용예시 : <property name="suffix" value=".jsp"></property> <!--setSurrfix() -->
+			ㄴ prefix : 경로의 앞부분에 해당
+				ㄴ 사용예시 : <property name="prefix" value="/WEB-INF/view/"></property>
+	ㄴ addObject()
+		ㄴ public ModelAndView addObject(String attributeName, Object attributeValue)
+--------------------------------------------------------------------------------
+ContextLoaderListener
+	ㄴ 사용예시
+		<listener>
+			<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+		</listener>
+		<context-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/springConfig/common-servlet.xml</param-value>
+		</context-param>
+--------------------------------------------------------------------------------
+표준태그라이브러리 (JSTL : Jsp Standarad Tag Library)
+	ㄴ http://java.sun.com/jsp/jstl/core
+		ㄴ 사용 예시 : <%@ taglib prefix='c' uri="http://java.sun.com/jsp/jstl/core" %>
+	ㄴ pom.xml로 추가 가능(Maven Project)
+	ㄴ 태그 사이사이에 주석 사용 자제
+		ㄴ jsp주석은 가능한데, html 주석이 들어가면 돌아가지를 않음

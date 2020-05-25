@@ -4,6 +4,15 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- 초기에 설정 -->
+  <listener>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>/WEB-INF/springConfig/common-servlet.xml</param-value>
+  </context-param>
   <!-- Spring Servlet 설정-->
   <servlet>
   	<servlet-name>springMVC</servlet-name>
