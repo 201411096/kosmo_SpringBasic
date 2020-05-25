@@ -16,7 +16,7 @@ public class RequestMappingController {
 	}
 	//return형이 String 인 경우 : 뷰 페이지를 지정
 	
-	@RequestMapping(value="/c.do", params= {"id=kim"})
+	@RequestMapping(value="/c.do", params= {"id=kim"})	// param이 id=kim인 경우에만 됨
 	public void test2(String id) { // 쿼리스트링으로 넘어오는 값들은 parameter로 잡으면 됨
 		System.out.println("c.do 요청 [" + id + "]");
 	}

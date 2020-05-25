@@ -19,11 +19,13 @@
 	</tr>
 	<c:forEach var='vo' items='${memberVOList.list}'>
 	<!-- for(변수 vo : List ) 자바의 향상된 for문 일 경우-->
-		<tr>
-			<td>${vo.name}</td>
-			<td>${vo.id}</td>
-			<td>${vo.age}</td>
-		</tr>
+		<c:if test="${vo.state}">
+			<tr>
+				<td>${vo.name}</td>
+				<td>${vo.id}</td>
+				<td>${vo.age}</td>
+			</tr>
+		</c:if>
 	</c:forEach>	
 </table>
 
