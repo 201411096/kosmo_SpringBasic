@@ -6,6 +6,7 @@
 		ㄴ SELECT * FROM board WHERE #{searchCondition} LIKE '%' || #{searchKeyword} || '%' ORDER BY seq DESC 
 			ㄴ 오류 발생
 		ㄴ SELECT * FROM board WHERE ${searchCondition} LIKE '%' || #{searchKeyword} || '%' ORDER BY seq DESC
+	ㄴ JSP의 Expression Language와는 별개로 사용되는 것임
 --------------------------------------------------
 spring mybatis 연동
 
