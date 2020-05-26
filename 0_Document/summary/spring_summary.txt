@@ -1,4 +1,8 @@
 ﻿--------------------------------------------------------------------------------
+스프링 설치
+	ㄴ 1. sts설치
+	ㄴ 2. eclipse marketplace - Spring Tools 3 Add-On for Spring Tools 4 3.9.13.CI
+--------------------------------------------------------------------------------
 스프링 프로젝트 생성_01
 	ㄴ 1. 스프링 프로젝트 생성
 	ㄴ 2. configure -> convert to maven project (pom.xml이 생성됨)
@@ -184,6 +188,16 @@ Controller에서 view로 데이터를 넘기는 방법
 		ㄴ 사용 방법 : @ModelAttribute("model_attr_name")
 --------------------------------------------------------------------------------
 Lombok
+--------------------------------------------------------------------------------
+Redirect 사용하는 이유
+	ㄴ 새로고침 시 데이터 중복 전송을 방지?..
+	ㄴ 사용방법 : @RequestMapping이 붙어있는 메소드에 String 값 반환시 앞부분에 "redirect:"추가
+	ㄴ 사용예시
+		ㄴ	@RequestMapping("/updateBoardContent.do")
+		ㄴ	public String updateBoardContent(BoardVO vo) {
+		ㄴ		service.updateBoard(vo);
+		ㄴ		return "redirect:getBoardList.do";
+		ㄴ	}
 --------------------------------------------------------------------------------
 페이지 전환만 수행하는 함수 (PathVariable을 이용)
 	@RequestMapping("/{step}.do")
