@@ -8,6 +8,16 @@
 		ㄴ SELECT * FROM board WHERE ${searchCondition} LIKE '%' || #{searchKeyword} || '%' ORDER BY seq DESC
 	ㄴ JSP의 Expression Language와는 별개로 사용되는 것임
 --------------------------------------------------
+CDATA
+	ㄴ mybatis 사용시에 <, <=, = 등 문제가 생기는 것을 방지하기 위해서 sql문을 감싸주는데 사용
+		ㄴ ex) 	<select id="getBoardList" resultType="board">
+				<![CDATA[
+					SELECT *
+					FROM BOARD
+					ORDER BY SEQ DESC
+				]]>
+			</select>
+--------------------------------------------------
 spring mybatis 연동
 
 1. Datasource 설정

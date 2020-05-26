@@ -3,12 +3,15 @@ package com.javassem.dao;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import com.javassem.domain.BoardVO;
 
-
+@Repository("BoardDAO")
 public class BoardDAOImpl implements BoardDAO{
-
-	private SqlSessionTemplate mybatis;
+	@Autowired
+	private SqlSessionTemplate mybatis; // 설정파일에서 생성되서 들어옴
 
 	public void insertBoard(BoardVO vo) {
 		System.out.println("===> Mybatis insertBoard() 호출");
