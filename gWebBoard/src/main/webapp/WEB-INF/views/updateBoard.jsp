@@ -16,7 +16,7 @@
 				</tr>
 				<tr>
 					<td bgcolor="orange">작성자</td>
-					<td align="left"><input type="text" name="writer" size="10" value="${board.writer}"/></td>
+					<td align="left">${board.writer}</td>
 				</tr>
 				<tr>
 					<td bgcolor="orange">내용</td>
@@ -28,6 +28,5 @@
 			</table>
 		</form>
 		<hr>
-		<a href="getBoardList.do">글 목록 가기</a>
 </body>
 </html>
