@@ -1,5 +1,5 @@
 ﻿--------------------------------------------------------------------------------
-스프링 프로젝트 생성
+스프링 프로젝트 생성_01
 	ㄴ 1. 스프링 프로젝트 생성
 	ㄴ 2. configure -> convert to maven project (pom.xml이 생성됨)
 	ㄴ 3. Spring -> add spring project nature
@@ -8,6 +8,30 @@
 		ㄴ 4_2. pom.xml build 태그 아래에 dependencies 태그 안에 depency태그들로 작성을 하면 알아서 관련 라이브러리를 다운받아옴
 	ㄴ ***** 프로젝트명만 문제가 생기거나, pom.xml에 문제가 생겼을 경우
 		ㄴ m2.repository를 지우면 됨	
+--------------------------------------------------------------------------------
+스프링 프로젝트 생성_02
+	ㄴ 
+	ㄴ tomcat 설정
+		ㄴ server view에서 서버 선택 -> modules 선택 -> path를 "/project_name"으로 변경, AutoReloaded 체크해제
+	ㄴ web.xml
+		ㄴ webapp -> WEB-INF -> web.xml -> appServlet의 url-pattern을 원하는 대로 설정
+			ㄴ ex) <url-pattern>*.do</url-pattern>
+	ㄴ 한글 인코딩
+		ㄴ webapp -> WEB-INF -> web.xml
+		<!-- 한글 인코딩 -->
+		<filter>
+			<filter-name>characterEncoding</filter-name>
+			<filter-class>org.springframework.web.filter.CharacterEncodingFilter
+			</filter-class>
+			<init-param>
+				<param-name>encoding</param-name>
+				<param-value>UTF-8</param-value>
+			</init-param>
+		</filter>
+		<filter-mapping>
+			<filter-name>characterEncoding</filter-name>
+			<url-pattern>/*</url-pattern>
+		</filter-mapping>
 --------------------------------------------------------------------------------
 DI
 	ㄴ Spring Bean Configuration File 생성
