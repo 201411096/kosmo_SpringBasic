@@ -16,6 +16,10 @@
 	ㄴ web.xml
 		ㄴ webapp -> WEB-INF -> web.xml -> appServlet의 url-pattern을 원하는 대로 설정
 			ㄴ ex) <url-pattern>*.do</url-pattern>
+	ㄴ servlet-context.xml
+		ㄴ webapp -> WEB-INF -> spring -> appServlet -> servlet-context.xml
+		ㄴ scanner 폴더 선택
+			ㄴ ex) <context:component-scan base-package="com.javassem" />
 	ㄴ 한글 인코딩
 		ㄴ webapp -> WEB-INF -> web.xml
 		<!-- 한글 인코딩 -->
