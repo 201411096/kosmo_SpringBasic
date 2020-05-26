@@ -11,5 +11,41 @@
 spring mybatis 연동
 
 1. Datasource 설정
-2. Datasource setting
+2. Datasource setting(x) -> connection pool 관리(sqlsession?)
 3. sqlSession ()
+--------------------------------------------------
+spring mybatis 연동_2
+1. datasource
+2. sqlSessionFactory
+3. sqlSession
+--------------------------------------------------
+Maven (pom.xml에 추가)
+	ㄴ 예시
+		<!-- 마이바티스 추가  -->
+		<!-- mybatis -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.4.6</version>
+		</dependency>
+		
+		<!-- mybatis-spring -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis-spring</artifactId>
+		    <version>1.3.2</version>
+		</dependency>
+		
+	  	<!--  SPRING JDBC 필요 --> 
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>	
+		
+		<!-- 트랜잭션 필요 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-tx</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>

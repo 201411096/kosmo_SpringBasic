@@ -117,6 +117,12 @@ Spring_Bean Annotation
 				ㄴ id값을 받아와서 userId에 넣어놓음
 		ㄴ @ModelAttribute("model_attr_name")
 			ㄴ model_attr_name에 해당하는 클래스의 객체로 묶어서 다음화면으로 보냄
+		ㄴ@ContextConfiguration : configuration 파일 연결?...
+			ㄴ 사용예시 : @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
+		ㄴ @Test : 테스팅할 메소드에 지정
+		ㄴ @RunWith
+			ㄴ 사용예시 : @RunWith(SpringJUnit4ClassRunner.class)
+		ㄴ @Log4j : lombok 필요...?
 	ㄴ bean을 이용해서 객체 생성시 클래스 이름에서 맨 앞글자를 소문자로 바꾼 형태로 자동으로 만들어줌
 --------------------------------------------------------------------------------
 Spring_Bean DI
@@ -175,3 +181,5 @@ Controller에서 view로 데이터를 넘기는 방법
 		ㄴ 사용 예시 : m.addAttribute("message", "팀원님들 뭐 하실래요"); ...}
 	ㄴ 4. ModelAttribute 이용
 		ㄴ 사용 방법 : @ModelAttribute("model_attr_name")
+--------------------------------------------------------------------------------
+Lombok

@@ -7,11 +7,12 @@
 </head>
 <body>
 
-		<h1>게시판 프로그램</h1>
-		<hr>
-		<br> <a href="getBoardList.do">글 목록 바로가기</a>
-		<hr>
-		<br>
+	<h1>게시판 프로그램</h1>
+	<hr>
+	<br>
+	<a href="getBoardList.do">글 목록 바로가기</a>
+	<hr>
+	<br>
 
 </body>
 </html>
