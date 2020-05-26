@@ -33,7 +33,7 @@ public class MybatisTest {
 			//Connection con = session.getConnection();
 			String result = session.selectOne("org.javassem.TestMapper.getTime");
 			System.out.println("결과 : result");
-			log.info("--------------결과----------------" + result);
+//			log.info("--------------결과----------------" + result);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}		
