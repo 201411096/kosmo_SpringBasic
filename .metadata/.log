@@ -11227,3 +11227,87 @@ java.lang.NullPointerException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:38:55.263
 !MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.BOkXlTvj => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:41.634
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:41.638
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@2aaf7354[org.springframework.tooling.boot.ls:1.17.0.202004200519(id=636)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:41.642
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.805
+!MESSAGE Boot LS startup time from start to initialized: 1159ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.826
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.yzaenuRkisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.831
+!MESSAGE Creating project sorter...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.836
+!MESSAGE Creating project sorter... DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.840
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.845
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.849
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.852
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.856
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.yzaenuRk => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.860
+!MESSAGE classpath=50 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.864
+!MESSAGE buffering callback sts4.classpath.yzaenuRk gWebBoard false 50
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.868
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.872
+!MESSAGE classpath=29 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.876
+!MESSAGE buffering callback sts4.classpath.yzaenuRk dMyBatis false 29
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.879
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.883
+!MESSAGE classpath=34 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.887
+!MESSAGE buffering callback sts4.classpath.yzaenuRk eSpringMybatis false 34
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.891
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.895
+!MESSAGE classpath=61 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.899
+!MESSAGE buffering callback sts4.classpath.yzaenuRk fDynamicWeb false 61
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.903
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.907
+!MESSAGE classpath=43 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.911
+!MESSAGE buffering callback sts4.classpath.yzaenuRk fSpringMVC false 43
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.915
+!MESSAGE executing callback sts4.classpath.yzaenuRk 5 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-26 12:39:42.932
+!MESSAGE executing callback sts4.classpath.yzaenuRk SUCCESS [done]
