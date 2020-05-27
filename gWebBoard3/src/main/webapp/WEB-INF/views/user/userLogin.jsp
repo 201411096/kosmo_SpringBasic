@@ -41,7 +41,7 @@
  사이트에 접속하기 위해서 사용자 인증 절차가 필요합니다.<p>
 아이디와 패스워드를 입력하세요.</h4>
 
-	<form name="form" action="login.do" method="post">
+	<form name="form" action="/gWebBoard3/user/login.do" method="post">
   <table width="300" height="120" >
     <tr> 
       <td width="100"> 아이디</td>

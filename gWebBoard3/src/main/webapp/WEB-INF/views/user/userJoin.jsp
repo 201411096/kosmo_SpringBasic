@@ -28,7 +28,7 @@
   </tr>
 </table>
 
-<form method="post" action="userInsert.do" name="userinput" id="userinput">
+<form method="post" action="/gWebBoard3/user/userInsert.do" name="userinput" id="userinput">
   <table class='table2'>
     <tr> 
       <td class="normalbold tb_ttl"> 

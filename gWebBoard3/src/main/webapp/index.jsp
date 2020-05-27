@@ -13,5 +13,9 @@
 <p> <a href='user/userLogin.do'>로그인</a> </p>
 <p> <a href='user/userJoin.do'>회원가입</a> </p>
 <p> <a href='getBoardList.do'>게시판</a> </p>
+<hr>
+<p> <a href='/gWebBoard3/user/userLogin.do'>로그인</a> </p>
+<p> <a href='/gWebBoard3/user/userJoin.do'>회원가입</a> </p>
+<p> <a href='/gWebBoard3/getBoardList.do'>게시판</a> </p>
 </body>
 </html>
