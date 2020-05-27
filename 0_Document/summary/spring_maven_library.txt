@@ -26,4 +26,9 @@
 			ㄴ in html..
 				<input type="file" name="file" maxlength="60" size="40">
 					ㄴ name을 b_fname이 아닌 MultipartFile의 변수명에 맞춰줘야함
+	ㄴ upload 저장 위치_01
+		ㄴ webapp - resources - upload
+				    ㄴ images
+	ㄴ upload 저장 위치_02(사용자가 보면 안되는 resource)
+		ㄴ webapp - WEB-INF - resources	
 --------------------------------------------------

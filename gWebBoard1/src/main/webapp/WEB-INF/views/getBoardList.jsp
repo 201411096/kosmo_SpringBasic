@@ -36,9 +36,9 @@
 					 <c:choose>
 					    <c:when test="${board.b_fsize==0}">첨부파일 없음</c:when>
 					    <c:otherwise>
-					    	<!-- <a href='resources/upload/${board.b_fname}'> -->
+					    	<a href='resources/upload/${board.b_fname}'>
 					    		<img src="resources/images/disk.gif">${board.b_fname}
-					    	<!-- </a>  -->
+					    	</a> 
 					    </c:otherwise>
 					 </c:choose>					  
 					</td>					
