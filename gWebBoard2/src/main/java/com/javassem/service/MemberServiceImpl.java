@@ -1,13 +1,16 @@
 package com.javassem.service;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.javassem.dao.MemberDAOImpl;
 import com.javassem.domain.MemberVO;
 
-
+@Service("memberService")
 public class MemberServiceImpl implements MemberService{
 
-
+	@Autowired
 	private MemberDAOImpl memberDAO;
 	
 	

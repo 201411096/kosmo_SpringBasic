@@ -124,15 +124,47 @@ Spring_Bean Annotation
 		ㄴ@ContextConfiguration : configuration 파일 연결?...
 			ㄴ 사용예시 : @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 		ㄴ @PathVariable : request로 넘어온 변수를 받음
-		ㄴ @Test : 테스팅할 메소드에 지정
-		ㄴ @RunWith
-			ㄴ 사용예시 : @RunWith(SpringJUnit4ClassRunner.class)
-		ㄴ @Log4j : lombok 필요...?
 	ㄴ bean을 이용해서 객체 생성시 클래스 이름에서 맨 앞글자를 소문자로 바꾼 형태로 자동으로 만들어줌
 --------------------------------------------------------------------------------
 Spring_Bean DI
 	ㄴ Autowired : setter, constructor가 없지만 Spring 내부적으로 객체를 관리해주고 그 객체를 인지하고 있음
 		ㄴ 의존성 주입(Dependancy Injection)
+--------------------------------------------------------------------------------
+Spring Annotation 종류
+	ㄴ @Component : component임을 알림..
+		ㄴ@Component("별칭") : 클래스명에서 앞글자만 소문자로 바뀐 id외에 별칭으로 id를 지정하고 싶을 경우에 사용
+	ㄴ @Autowired : 생성자 혹은 setter가 없이 주입해주는 어노테이션(DI : Dependency Injection)
+	ㄴ @Qualifier("지정하고싶은_id") : 동일한 클래스의 빈이 여러개일 경우 선택해주는 어노테이션
+	ㄴ @Resource(name="지정하고싶은_id") : autowired와 qualifier를 같이 사용한 효과
+	ㄴ @Inject : @Autowired와 동일한 기능
+	ㄴ 클래스를 분류하기 위한 Annotation(기본적으로 @Component를 상속한 Annotation)
+		ㄴ @Service : 비즈니스 로직을 처리하는 Serivce 클래스임을 알림
+		ㄴ @Repository : 데이터베이스 연동을 처리하는 DAO 클래스
+		ㄴ @Controller : 사용자 요청을 제어하는 Controller 클래스
+	ㄴ @RequestMapping : controller 클래스 내부 메소드들에서 사용
+		ㄴ requestMapping한 함수에 return형이 String인 경우 : ViewPage를 지정한 것임
+			ㄴ requestMapping한 함수가 void인 경우 : 요청과 동일한 이름의 ViewPage를 지정함
+		ㄴ 사용예시 : @RequestMapping("/start.do") // start.do url이 들어올경우에만 mapping을 함
+		ㄴ 사용예시2 : @RequestMapping(value={"/a.do", "/b.do"})
+		ㄴ 쿼리스트링으로 넘어오는 값들은 requestMapping한 함수의 parameter로 받아올 수 있음
+			ㄴ 사용예시1_1 : <a href="board/c.do?id=kim">요청3</a>
+			ㄴ 사용예시1_2 : public void test2(String id) --> 위의 parameter id값을 가져옴
+		ㄴ JSTL에서 parameter로 넘겨받은 값들을 받는법
+			ㄴ ${param.param_name}
+	ㄴ @RequestParam
+		ㄴ 사용예시 : public String test(String id, @RequestParam(defaultValue = "0")int age)
+			ㄴ age변수의 default값을 0으로,,
+		ㄴ 사용예시 : public String test(@RequestParam(value="id")String userId, @RequestParam(defaultValue = "0")int age)
+			ㄴ id값을 받아와서 userId에 넣어놓음
+	ㄴ @ModelAttribute("model_attr_name")
+		ㄴ model_attr_name에 해당하는 클래스의 객체로 묶어서 다음화면으로 보냄
+	ㄴ@ContextConfiguration : configuration 파일 연결?...
+		ㄴ 사용예시 : @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
+	ㄴ @PathVariable : request로 넘어온 변수를 받음
+	ㄴ @Test : 테스팅할 메소드에 지정
+	ㄴ @RunWith
+		ㄴ 사용예시 : @RunWith(SpringJUnit4ClassRunner.class)
+	ㄴ @Log4j : lombok 필요...?	
 --------------------------------------------------------------------------------
 AOP : Aspect Oriented Programming
 	ㄴ 핵심기능(Business Logic)과 횡단관심사(Cross-Cutting Concern)

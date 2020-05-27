@@ -5,6 +5,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="user">
 
+	<insert id="userInsert" parameterType="member" >
+		INSERT INTO member
+		(
+			userid, userpass, username
+		)
+		VALUES
+		(
+			#{userId}, #{userPass}, #{userName}
+		)
+	</insert>
 
 
 </mapper>
