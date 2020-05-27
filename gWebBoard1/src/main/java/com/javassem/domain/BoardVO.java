@@ -19,10 +19,31 @@ public class BoardVO {
 	private long b_fsize;
 	
 	//*************************************************
-
+	MultipartFile file; // (****) file 변수명이 폼에 name과 같아야함 <input type='file' name=''>
 	
-	
-	
+	public MultipartFile getFile() {
+		return file;
+	}
+	// FileUpload setters 설정
+	public void setFile(MultipartFile file) {
+		this.file = file;
+		
+		if(!file.isEmpty()) {
+			// MultipartFile에서 파일명과 크기만 얻어오기 -> DB에 입력
+			this.b_fname = file.getOriginalFilename();
+			this.b_fsize = file.getSize();
+			
+			// 실제 파일로 저장
+			File f = new File("D:\\SpringBasic\\gWebBoard1\\src\\main\\webapp\\resources\\upload\\" + b_fname);
+			try {
+				file.transferTo(f);	// 사용자가 입력해둔 파일을 내가 만들어둔 file 객체에 보냄
+			} catch (Exception e) {
+				System.out.println("파일전송 실패 : " + e.getMessage());
+				e.printStackTrace();
+			}
+		}
+			
+	}
 	public int getB_id() {
 		return b_id;
 	}

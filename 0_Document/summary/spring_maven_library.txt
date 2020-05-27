@@ -1,5 +1,5 @@
 --------------------------------------------------
-파일업로드
+파일업로드 (commons-fileupload)
 	ㄴ pom.xml
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -8,4 +8,22 @@
 		</dependency>
 	ㄴ servlet-context.xml
 		<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></beans:bean>
+	ㄴ VO class
+		MultipartFile file; // (****) file 변수명이 폼에 name과 같아야함 <input type='file' name=''>
+		ㄴ generate getters and setters
+			ㄴ setters 설정
+	ㄴ form 태그 사용시 
+		ㄴ post방식으로 해야 넘어감
+		ㄴ enctype='multipart/form-data'
+		ㄴ 사용예시
+			<form action="saveBoard.do" method='post' enctype='multipart/form-data'>
+	ㄴ input type='file'태그
+		ㄴ VO 객체의 filename이 아닌 MultipartFile의 변수에 맞춰줘야함
+		ㄴ 사용예시
+			ㄴ in VO..
+				private String b_fname;
+				MultipartFile file;
+			ㄴ in html..
+				<input type="file" name="file" maxlength="60" size="40">
+					ㄴ name을 b_fname이 아닌 MultipartFile의 변수명에 맞춰줘야함
 --------------------------------------------------
