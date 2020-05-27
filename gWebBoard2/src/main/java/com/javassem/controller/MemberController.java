@@ -1,5 +1,9 @@
 package com.javassem.controller;
 
+import java.util.Date;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,5 +49,17 @@ public class MemberController {
 		return message;
 //		Spring에서 String을 리턴하면 뷰페이지 지정이 되어 버림
 //		무조건 뷰페이지 지정되어서 화면이 변경됨
+	}
+	@RequestMapping("/login.do")
+	public String login(MemberVO vo , HttpSession session) {
+		MemberVO result = memberService.idCheck_Login(vo);
+		if(result==null || result.getUserId() == null) {
+			return "/user/userLogin";
+		}else {
+			//로그인 성공
+			session.setAttribute("sessionTime", new Date().toLocaleString());
+			session.setAttribute("userName", result.getUserName());
+		}
+		return "/user/Main";
 	}
 }
