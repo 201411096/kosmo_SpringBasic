@@ -15,7 +15,22 @@ import com.javassem.dao.MemberDAO;
 import com.javassem.domain.MemberVO;
 
 
+@Controller
+@RequestMapping("/user")
 public class MemberController {
 
+	@RequestMapping("/{url}.do")
+	public String regist(@PathVariable String url) {
+		return "user/"+url;
+	}
 	
+//	@RequestMapping("/userJoin.do")
+//	public void regist() {
+//		
+//	} // WEB-INF/views/ + user/userJoin + .jsp
+//	
+//	@RequestMapping("/userLogin.do")
+//	public void login() {
+//		
+//	}
 }
