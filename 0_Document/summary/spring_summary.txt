@@ -151,6 +151,9 @@ Spring Annotation 종류
 			ㄴ 사용예시1_2 : public void test2(String id) --> 위의 parameter id값을 가져옴
 		ㄴ JSTL에서 parameter로 넘겨받은 값들을 받는법
 			ㄴ ${param.param_name}
+		ㄴ produces
+			ㄴ RequestMapping으로 값을 불러올 경우( 한글화 깨짐 방지 )
+			ㄴ 사용예시 : produces="application/text; charset=utf-8"
 	ㄴ @RequestParam
 		ㄴ 사용예시 : public String test(String id, @RequestParam(defaultValue = "0")int age)
 			ㄴ age변수의 default값을 0으로,,
@@ -243,4 +246,21 @@ Redirect 사용하는 이유
 AJAX
 	ㄴ @ResponseBody
 		ㄴ 비동기 통신(ajax)에서 호출하는 함수에서 필요
-		ㄴ 
+		ㄴ RequestMapping을 할 경우 String 반환시 String에 해당하는 페이지로 변경되는데 그걸 막아줌
+--------------------------------------------------------------------------------
+AJAX 사용예시
+	$('#userId').keyup(function(){
+        // 비동기통신 ajax
+		
+		$.ajax({
+			type:'post', /* get을 하나 post를 하나 url에 보이진 않음, 용량이 많으면 post */
+			async : true, // default : true
+			url : 'idCheck.do',	// 이미 url 자체가 user까지 내려온 상태임
+			contentType : 'application/x-www-form-urlencoded;charset=UTF-8', /*넘어가는 데이터를 인코딩하기 위함*/
+			data : "userId=" + $('#userId').val(),
+			success : function(resultData) {
+				$('#idCheckResult').html(resultData);
+			}
+		});
+       
+	})
