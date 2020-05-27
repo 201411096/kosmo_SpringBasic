@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.javassem.domain.MemberVO;
@@ -35,14 +36,14 @@ public class MemberController {
 		mv.addObject("result", result);
 		return mv;
 	}
-	
-//	@RequestMapping("/userJoin.do")
-//	public void regist() {
-//		
-//	} // WEB-INF/views/ + user/userJoin + .jsp
-//	
-//	@RequestMapping("/userLogin.do")
-//	public void login() {
-//		
-//	}
+	@ResponseBody
+	@RequestMapping(value="/idCheck.do", produces="application/text; charset=utf-8")
+	public String idCheck(MemberVO vo) {
+		MemberVO result = memberService.idCheck_Login(vo);
+		String message = "ID 사용 가능합니다.";
+		if(result!=null) message = "중복된 아이디가 존재합니다.";
+		return message;
+//		Spring에서 String을 리턴하면 뷰페이지 지정이 되어 버림
+//		무조건 뷰페이지 지정되어서 화면이 변경됨
+	}
 }

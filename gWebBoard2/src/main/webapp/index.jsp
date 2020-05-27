@@ -11,7 +11,7 @@
 </h1>
 
 <p> <a href='user/userLogin.do'>로그인</a> </p>
-<p> <a href='user/userJoin.do'>회원가입</a></p>
+<p> <a href='user/userJoin.do'>회원가입</a> </p>
 
 </body>
 </html>

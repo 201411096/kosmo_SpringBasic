@@ -32,7 +32,18 @@ $(function(){
 	
 	//아이디 중복체크
 	$('#userId').keyup(function(){
-        
+        // 비동기통신 ajax
+		
+		$.ajax({
+			type:'post', /* get을 하나 post를 하나 url에 보이진 않음, 용량이 많으면 post */
+			async : true, // default : true
+			url : 'idCheck.do',	// 이미 url 자체가 user까지 내려온 상태임
+			contentType : 'application/x-www-form-urlencoded;charset=UTF-8', /*넘어가는 데이터를 인코딩하기 위함*/
+			data : "userId=" + $('#userId').val(),
+			success : function(resultData) {
+				$('#idCheckResult').html(resultData);
+			}
+		});
        
 	})
 })
