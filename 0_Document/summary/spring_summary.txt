@@ -244,9 +244,39 @@ Redirect 사용하는 이유
 	}
 --------------------------------------------------------------------------------
 AJAX
-	ㄴ @ResponseBody
-		ㄴ 비동기 통신(ajax)에서 호출하는 함수에서 필요
-		ㄴ RequestMapping을 할 경우 String 반환시 String에 해당하는 페이지로 변경되는데 그걸 막아줌
+	ㄴ Ajax 메소드 종류
+		ㄴ $.ajax() : 비동기식 Ajax를 이용하여 HTTP 요청을 전송함.
+		ㄴ $.get() : 전달받은 주소로 GET 방식의 HTTP 요청을 전송함.
+		ㄴ $.post() : 전달받은 주소로 POST 방식의 HTTP 요청을 전송함.
+		ㄴ $.getScript() : 웹 페이지에 스크립트를 추가함.
+		ㄴ $.getJSON() :  전달받은 주소로 GET 방식의 HTTP 요청을 전송하여, 응답으로 JSON 파일을 전송받음.
+		ㄴ .load() : 서버에서 데이터를 읽은 후, 읽어 들인 HTML 코드를 선택한 요소에 배치함.
+	ㄴ 필요한 Annotation
+		ㄴ @ResponseBody
+			ㄴ 비동기 통신(ajax)에서 호출하는 함수에서 필요
+			ㄴ RequestMapping을 할 경우 String 반환시 String에 해당하는 페이지로 변경되는데 그걸 막아줌
+--------------------------------------------------------------------------------
+AJAX 사용방법
+	ㄴ $.ajax({
+		    // URL은 필수 요소이므로 반드시 구현해야 하는 Property입니다.
+		    url : '요청 URL 주소를 입력합니다.'
+		    // 다양한 속성들 중에서 필요한 Option을 선택해서 구현합니다.('[]'는 반복해서 사용할 수 있다는 의미입니다.)
+		    [, Options]
+		});
+--------------------------------------------------------------------------------
+AJAX 사용방법 <Options>
+	ㄴ url : 요청이 전송되는 URL이 포함된 문자열
+	ㄴ type : HTTP요청방식 (Get / Post)
+	ㄴ timeout : HTTP요청에 대한 제한 시간을 지정 (단위 : ms)
+	ㄴ success : HTTP 요청 성공시 이벤트 핸들러
+	ㄴ error : HTTP 요청 실패시 이벤트 핸들러
+	ㄴ complete : HTTP 요청 완료시 이벤트 핸들러
+	ㄴ data : HTTP 요청 후 return 하는 값
+	ㄴ dataType : HTTP 요청 후 return 하는 데이터의 Type을 지정
+	ㄴ async : 요청시 동기 유무를 선택할 수 있음 (default = true, false)
+	ㄴ cache : 브라우저에 의해 요청되는 페이지를 캐시 유무 (true, false)
+	ㄴ beforeSend : HTTP 요청 전에 발생하는 이벤트 핸들러
+	ㄴ global : 전역함수 활성 여부를 설정(True / False)
 --------------------------------------------------------------------------------
 AJAX 사용예시
 	$('#userId').keyup(function(){
