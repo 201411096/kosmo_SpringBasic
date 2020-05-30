@@ -319,3 +319,9 @@ AJAX 사용예시
 	ㄴ produces="application/json" -> json형식으로 js파일에 보냄
 	ㄴ produces="application/text" -> string형식으로 js파일에 보냄
 		ㄴ + jackson 라이브러리 추가
+--------------------------------------------------------------------------------
+ajax 406 error 대처
+	ㄴ 1. jackson-databind 라이브러리
+	ㄴ 2. servlet-context.xml에 annotation-driven 태그 추가
+	ㄴ 3. ResponseBody 어노테이션 선언
+	ㄴ 4. RequestMapping produces="application/json"...
