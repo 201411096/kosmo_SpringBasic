@@ -313,3 +313,9 @@ AJAX 사용예시
 		});
        
 	})
+--------------------------------------------------------------------------------
+@RequestMapping produces 속성?
+	ㄴ <controller에서 ajax로 데이터를 보낼 시 데이터 타입 지정)
+	ㄴ produces="application/json" -> json형식으로 js파일에 보냄
+	ㄴ produces="application/text" -> string형식으로 js파일에 보냄
+		ㄴ + jackson 라이브러리 추가

@@ -32,3 +32,5 @@
 	ㄴ upload 저장 위치_02(사용자가 보면 안되는 resource)
 		ㄴ webapp - WEB-INF - resources	
 --------------------------------------------------
+jackson 라이브러리
+	ㄴ java에서 json구조를 사용할 경우에 필요
