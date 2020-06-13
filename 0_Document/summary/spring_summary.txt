@@ -320,6 +320,12 @@ AJAX 사용예시
 	ㄴ produces="application/text" -> string형식으로 js파일에 보냄
 		ㄴ + jackson 라이브러리 추가
 --------------------------------------------------------------------------------
+spring list bean 사용법 (리스트VO, 리스트객체, listVO)
+	ㄴ VOList 파일 -> fDynamicWeb/src/example/member/model/MemberVOList.java
+	ㄴ jsp 파일 -> UserListProperty.jsp
+	ㄴ name의 요소들과 volist파일안에 선언된 리스트객체의 변수 이름이 같아야됨
+	
+--------------------------------------------------------------------------------
 ajax 406 error 대처
 	ㄴ 1. jackson-databind 라이브러리
 	ㄴ 2. servlet-context.xml에 annotation-driven 태그 추가
