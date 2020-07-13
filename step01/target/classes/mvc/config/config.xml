@@ -7,9 +7,5 @@
 	<typeAliases>
 		<typeAlias alias="dept" type="vo.DeptVO" />
 	</typeAliases>
-	
-	<!-- Sql Mapper 설정 -->
-	<mappers>
-		<mapper resource="mappings/board-mapping.xml" />
-	</mappers>
+
 </configuration>
