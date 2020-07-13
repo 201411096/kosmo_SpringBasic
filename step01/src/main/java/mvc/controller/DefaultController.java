@@ -65,7 +65,9 @@ public class DefaultController {
 	}
 	@RequestMapping("/selectwithoption")
 	public String selectwithoption(Model model, HttpServletRequest request) throws UnsupportedEncodingException {
+		// mapper의 parameter로 넘길 hashmap
 		HashMap<String, String> map = new HashMap<String, String>();
+		// 
 		String selectoptionArray [] = {"dname","deptno", "loc"};
 		String searchword = URLDecoder.decode((String)request.getParameter("searchword"), "utf-8");
 		
@@ -88,6 +90,6 @@ public class DefaultController {
 			ds.set(row, "loc", vo.getLoc());
 		}
 		model.addAttribute("ds", ds);
-		return "all"; //all.jsp
+		return "all"; //all.jsp 이동
 	}
 }

@@ -147,6 +147,7 @@
         	}
         };
 
+        // 검색 버튼 클릭 이벤트
         this.Button00_onclick = function(obj,e)
         {
         	// 검색 옵션 (어떤 column으로 검색할지)
@@ -155,12 +156,13 @@
         	var searchword_val = encodeURI(this.searchword.value);
 
         	this.transaction(
-        		"urlTest03",	//strSvcID,
+        		"urlTest03",		//strSvcID
+        		// 검색 옵션과 검색어를 querystring으로 전달
         		"strURL::http://192.168.0.18:8080/step01/selectwithoption?searchword="+searchword_val+"&selectoption="+selectopiton_val,
-        		"",	        //strInDatasets,
-        		"dsdept=ar",  //strOutDatasets 데이터셋에 바인딩 될 부분,
-        		"",		//"deptno=10dname=총무부", //strArgument  이부분은 파라미터
-        		"fn_callback"     //strCallbackFunc[,bAsync[,nDataType[,bCompress]]]
+        		"",	        		//strInDatasets
+        		"dsdept=ar", 		//strOutDatasets 데이터셋에 바인딩 될 부분,
+        		"",					//strArgument
+        		"fn_callback"     	//strCallbackFunc[,bAsync[,nDataType[,bCompress]]]
         	);
 
         	this.fn_callback = function(svcID, errCD, errMSG){
