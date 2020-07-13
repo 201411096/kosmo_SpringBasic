@@ -107,19 +107,20 @@ this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 
 this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
-	var selectopiton_val = encodeURI(this.selectoption.value);
-	var searchword_val = encodeURI(this.searchword.value);
-	console.log(selectopiton_val);
-	console.log(searchword_val);
+	// 검색 옵션 (어떤 column으로 검색할지)
+	var selectopiton_val = encodeURI(this.selectoption.value); 
+	// 검색어
+	var searchword_val = encodeURI(this.searchword.value); 
 	
 	this.transaction(
 		"urlTest03",	//strSvcID,
-		"strURL::http://192.168.0.18:8080/step01/selectwithoption?searchword="+searchword_val+"&selectoption="+selectopiton_val,	//strURL("http://localhost:8080/step01/all" 직접 링크는 됨)
+		"strURL::http://192.168.0.18:8080/step01/selectwithoption?searchword="+searchword_val+"&selectoption="+selectopiton_val,
 		"",	        //strInDatasets,
 		"dsdept=ar",  //strOutDatasets 데이터셋에 바인딩 될 부분,
-		"",		//"deptno=10dname=총무부", //strArgument  이부분은 파라미터 ,
+		"",		//"deptno=10dname=총무부", //strArgument  이부분은 파라미터
 		"fn_callback"     //strCallbackFunc[,bAsync[,nDataType[,bCompress]]]
 	);
+	
 	this.fn_callback = function(svcID, errCD, errMSG){
 		let ret = (errMSG=="FAILED" || svcID != "urlTest01") ? "error" : "success";
 	};

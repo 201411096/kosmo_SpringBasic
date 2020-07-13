@@ -67,12 +67,13 @@ public class DefaultController {
 	public String selectwithoption(Model model, HttpServletRequest request) throws UnsupportedEncodingException {
 		HashMap<String, String> map = new HashMap<String, String>();
 		String selectoptionArray [] = {"dname","deptno", "loc"};
-		map.put("selectoption", selectoptionArray[Integer.parseInt(request.getParameter("selectoption"))]);
 		String searchword = URLDecoder.decode((String)request.getParameter("searchword"), "utf-8");
+		
+		map.put("selectoption", selectoptionArray[Integer.parseInt(request.getParameter("selectoption"))]);		
 		map.put("searchword", searchword);
+		
 		List<DeptVO> list = deptDao.selectWithOption(map);
 		
-		System.out.println("controller에서 list 길이 확인 " + list.size());
 		//-------------------------
 		//DB에서 받아온 값을 넥사크로로 바인딩할 수 있도록 처리
 		DataSet ds = new DataSet("ar");
