@@ -9,9 +9,28 @@
 	<insert id="add" parameterType="dept">
 		INSERT INTO dept(deptno, dname, loc) values(#{deptno}, #{dname}, #{loc})
 	</insert>
+	
+	
+	<!-- 검색옵션에 해당하는 컬럼에서 검색어에 해당하는 부서들을 가져옴 -->
 	<select id='selectWithOption' resultType='dept' parameterType="map">
-		<!-- SELECT * FROM dept where ${selectoption} = #{searchword} -->
 		SELECT * FROM dept where REGEXP_LIKE (${selectoption}, '(*)'||#{searchword}||'(*)')
 	</select>
 	
+	
+	
+	<!-- 동적 sql tag -->
+	<select id="select" resultType="dept" parameterType='dept'>
+      SELECT * FROM dept 
+      
+      <if test="deptno != 0">
+         WHERE deptno like '%'|| #{deptno} ||'%'
+      </if>
+      <if test="dname != null">
+         WHERE dname like '%'|| #{dname} ||'%'
+      </if>
+      <if test="loc != null">
+         WHERE loc like '%'|| #{loc} ||'%'
+      </if>
+   </select>
+   
 </mapper>

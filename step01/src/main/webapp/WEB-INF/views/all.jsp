@@ -8,6 +8,35 @@
 <%@ page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	DataSet ds1 = (DataSet)request.getAttribute("ds");
+	System.out.println("DS :" + ds1.getRowCount());
+	PlatformData pData = new PlatformData();
+	pData.addDataSet(ds1);
+	HttpPlatformResponse res = 
+			new HttpPlatformResponse(response,PlatformType.CONTENT_TYPE_XML,"utf-8");
+	out.clear();
+	out = pageContext.pushBody();
+	res.setData(pData);
+	res.sendData();
+%>
+</body>
+</html>
+
+
+
+
+
+
+
 <%--
 	List<DeptVO> list = new ArrayList<>();
 	DeptVO vo = new DeptVO();
@@ -38,25 +67,4 @@
 		ds.set(row, "loc", e.getLoc());
 	}
 	request.setAttribute("ds", ds);
---%>    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
-<%
-	DataSet ds1 = (DataSet)request.getAttribute("ds");
-	System.out.println("DS :" + ds1.getRowCount());
-	PlatformData pData = new PlatformData();
-	pData.addDataSet(ds1);
-	HttpPlatformResponse res = 
-			new HttpPlatformResponse(response,PlatformType.CONTENT_TYPE_XML,"utf-8");
-	out.clear();
-	out = pageContext.pushBody();
-	res.setData(pData);
-	res.sendData();
-%>
-</body>
-</html>
+--%>

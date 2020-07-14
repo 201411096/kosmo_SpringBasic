@@ -8,6 +8,20 @@
       <XCSS rule_version="1.04"/>
       <Script rule_version="1.02"/>
     </Rule>
-    <Info project="D:\SpringBasic\nexacro\sampleProject\" generated="D:\SpringBasic\step01\src\main\webapp\"><File url="typedefinition.xml" checksum="20200713114640" errormsg=""/><File url="appvariables.xml" checksum="20200713110852" errormsg=""/><File url="environment.xml" checksum="20200713110852" errormsg=""/><File url="_resource_\_theme_\default\theme.xcss" checksum="20200713110852" errormsg=""/><File url="Application_Desktop.xadl" checksum="20200713110852" errormsg=""/><File url="FrameBase\Form_Work.xfdl" checksum="20200713192816" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\framework\Framework.json" checksum="20200128141820" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\resources\Resource.json" checksum="20200128141820" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\CompBase.json" checksum="20200128141818" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ComComp.json" checksum="20200128141818" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\Grid.json" checksum="20200128141818" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ListView.json" checksum="20200128141820" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\DeviceAPI.json" checksum="20200128141818" errormsg=""/></Info>
+    <Info project="D:\SpringBasic\nexacro\sampleProject\" generated="D:\SpringBasic\step01\src\main\webapp\">
+      <File url="typedefinition.xml" checksum="20200713114640" errormsg=""/>
+      <File url="appvariables.xml" checksum="20200713110852" errormsg=""/>
+      <File url="environment.xml" checksum="20200713110852" errormsg=""/>
+      <File url="_resource_\_theme_\default\theme.xcss" checksum="20200713110852" errormsg=""/>
+      <File url="Application_Desktop.xadl" checksum="20200713110852" errormsg=""/>
+      <File url="FrameBase\Form_Work.xfdl" checksum="20200713192816" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\framework\Framework.json" checksum="20200128141820" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\resources\Resource.json" checksum="20200128141820" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\CompBase.json" checksum="20200128141818" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ComComp.json" checksum="20200128141818" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\Grid.json" checksum="20200128141818" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ListView.json" checksum="20200128141820" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\DeviceAPI.json" checksum="20200128141818" errormsg=""/>
+    </Info>
   </GenInfo>
 </root>

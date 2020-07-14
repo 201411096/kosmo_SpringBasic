@@ -23,8 +23,6 @@ public class DeptDao {
 	}
 	
 	public List<DeptVO> selectWithOption(Map map){
-		System.out.println("dao에서 확인..." + map.get("searchword") );
-		System.out.println("dao에서 확인..." + map.get("selectoption"));
 		return ss.selectList("dept.selectWithOption", map);
 	}
 }

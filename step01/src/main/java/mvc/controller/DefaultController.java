@@ -65,15 +65,16 @@ public class DefaultController {
 	}
 	@RequestMapping("/selectwithoption")
 	public String selectwithoption(Model model, HttpServletRequest request) throws UnsupportedEncodingException {
-		// mapper의 parameter로 넘길 hashmap
+		// sql parameter로 넘길 hashmap
 		HashMap<String, String> map = new HashMap<String, String>();
-		// 
+		// 0, 1, 2로 넘겨질 검색옵션을 db의 컬럼이름으로 변환하는데 사용할 배열
 		String selectoptionArray [] = {"dname","deptno", "loc"};
+		// encoding 되어서 넘어온 검색어를 디코딩해서 저장
 		String searchword = URLDecoder.decode((String)request.getParameter("searchword"), "utf-8");
-		
+		// sql parameter로 넘길 hashmap에 저장		
 		map.put("selectoption", selectoptionArray[Integer.parseInt(request.getParameter("selectoption"))]);		
 		map.put("searchword", searchword);
-		
+		// 검색어 검색옵션에 해당하는 부서 리스트를 받아옴
 		List<DeptVO> list = deptDao.selectWithOption(map);
 		
 		//-------------------------
