@@ -331,3 +331,28 @@ ajax 406 error 대처
 	ㄴ 2. servlet-context.xml에 annotation-driven 태그 추가
 	ㄴ 3. ResponseBody 어노테이션 선언
 	ㄴ 4. RequestMapping produces="application/json"...
+--------------------------------------------------------------------------------
+spring handlerinterceptoradapter
+	ㄴ prehandle
+		ㄴ 컨트롤러(즉 RequestMapping이 선언된 메서드 진입) 실행 직전에 동작
+	ㄴ posthandle
+		ㄴ 트롤러 진입 후 view가 랜더링 되기 전 동작
+	ㄴ aftercomplete
+		ㄴ 컨트롤러 진입 후 view가 정상적으로 랜더링 된 후 제일 마지막에 동작
+	ㄴ afterConcurrentHandlingStarted
+		ㄴ 비동기 요청 시 PostHandle와 afterCompletion메서드를 수행하지 않고 이 메소드가 동작
+	ㄴ 기본적인 동작 순서
+		ㄴ 요청을 처리할 Handler에 가기전에 Interceptor의 preHandelr() 메소드가 호출된다.
+		ㄴ 요청을 처리할 수 있는 Handler가 요청을 처리하고 retrun을 하게 되면 Interceptor의 postHandler() 메소드가 호출된다.
+		ㄴ Interceptor의 posetHandler() 메소드에 정의된 모든 작업이 끝나면 View를 렌더링한다.
+		ㄴ View 렌더링이 끝나면 Interceptor의 afterCompletion() 메소드가 호출된다.
+		ㄴ Interceptor의 afterCompletion() 메소드에 정의된 모든 작업이 끝나면 클라이언트에게 최종적으로 Response를 전달한다.
+	ㄴ multi interceptor 동작 순서
+		ㄴ preHandler 1 
+		ㄴ preHandler 2
+		ㄴ 요청 처리 
+		ㄴ postHandler 2
+		ㄴ postHandler 1
+		ㄴ View 렌더링
+		ㄴ afterCompletion 2
+		ㄴ afterCompletion 1
