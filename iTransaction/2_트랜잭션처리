@@ -16,3 +16,9 @@
 2.     
 
 
+------추가-------
+Spring 프레임워크와 MyBatis 를 연동하면서 트랜잭션을 처리하려면, 
+
+서블릿 설정파일에 DataSourceTransactionManager 빈과 <tx:annotation-driven />을 설정하고,  서비스 클래스에서 다수개의 SQL문장을 호출하는 메소드에 @Transactional 을 선언해주면 된다. 
+
+@Transactional 으로 선언된 메소드 안에서 어떠한 오류가 발생할 경우에는 그 메소드 안에서 호출된 모든 SQL문장은 모두 취소되고 오류가 없다면 모두 실행된다
