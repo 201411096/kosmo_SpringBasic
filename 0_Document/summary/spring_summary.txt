@@ -336,9 +336,12 @@ webapp까지의 경로 얻는방법
 	ㄴ tomcat 서버 설정 -> serve modules without publishing
 	ㄴ request.getSession().getServletContext().getRealPath("")
 		ㄴ getRealPath()의 인자로 ""만을 보내고 그 뒤로 string을 붙여서 만들 경우 target부분에 폴더가 생김
-	ㄴ 사용방법
+	ㄴ 사용예시_controller
 		ㄴ request.getSession().getServletContext().getRealPath("resources/imgs")
 			ㄴ webapp 바로 밑의 resources 의 imgs 폴더에 생성됨
+	ㄴ 사용예시_jsp부분에서
+		ㄴ <img src="${pageContext.request.contextPath}/resources/imgs/findboard/${findBoardContent.findboardId}/${file.name}" class="d-block w-100" alt="...">
+		ㄴ <img src="${pageContext.request.contextPath}/resources/imgs/findboard/default/1.png" class="d-block w-100" alt="...">
 --------------------------------------------------------------------------------
 spring handlerinterceptoradapter
 	ㄴ prehandle
