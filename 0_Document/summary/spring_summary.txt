@@ -332,6 +332,14 @@ ajax 406 error 대처
 	ㄴ 3. ResponseBody 어노테이션 선언
 	ㄴ 4. RequestMapping produces="application/json"...
 --------------------------------------------------------------------------------
+webapp까지의 경로 얻는방법
+	ㄴ tomcat 서버 설정 -> serve modules without publishing
+	ㄴ request.getSession().getServletContext().getRealPath("")
+		ㄴ getRealPath()의 인자로 ""만을 보내고 그 뒤로 string을 붙여서 만들 경우 target부분에 폴더가 생김
+	ㄴ 사용방법
+		ㄴ request.getSession().getServletContext().getRealPath("resources/imgs")
+			ㄴ webapp 바로 밑의 resources 의 imgs 폴더에 생성됨
+--------------------------------------------------------------------------------
 spring handlerinterceptoradapter
 	ㄴ prehandle
 		ㄴ 컨트롤러(즉 RequestMapping이 선언된 메서드 진입) 실행 직전에 동작
