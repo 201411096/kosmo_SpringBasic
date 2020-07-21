@@ -324,7 +324,10 @@ spring list bean 사용법 (리스트VO, 리스트객체, listVO)
 	ㄴ VOList 파일 -> fDynamicWeb/src/example/member/model/MemberVOList.java
 	ㄴ jsp 파일 -> UserListProperty.jsp
 	ㄴ name의 요소들과 volist파일안에 선언된 리스트객체의 변수 이름이 같아야됨
-	
+--------------------------------------------------------------------------------
+spring list (jsp -> controller)
+	ㄴ 단순히 list를 보내고 싶을 경우 (ex) string list)
+	ㄴ jsp에서 name을 동일하게 만들고, controller에서 배열로 받으면 됨	
 --------------------------------------------------------------------------------
 ajax 406 error 대처
 	ㄴ 1. jackson-databind 라이브러리
