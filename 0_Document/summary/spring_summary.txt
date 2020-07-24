@@ -476,3 +476,16 @@ jquery autocomplete
 		    });
 		    
 		</script>
+--------------------------------------------------------------------------------
+현재 작업 경로 가져오기 - javascript
+	ㄴ 사용방법
+		function getContextPath() {
+			   return window.location.pathname.substring(0, window.location.pathname.indexOf("/",2));
+		}
+--------------------------------------------------------------------------------
+현재 작업 경로 가져오기 - spring
+	ㄴ 사용방법
+		ㄴ request.getSession().getServletContext().getRealPath("")
+	ㄴ 사용예시
+		ㄴ request.getSession().getServletContext().getRealPath("resources/")
+		ㄴ request.getSession().getServletContext().getRealPath("resources/imgs")
