@@ -484,6 +484,24 @@ controller mapping
 			return step;
 		}
 --------------------------------------------------------------------------------
+json to controller
+	ㄴ 필요한 라이브러리
+		<dependency> 
+			<groupId>com.fasterxml.jackson.core</groupId> 
+			<artifactId>jackson-databind</artifactId> 
+			<version>2.9.3</version> 
+		</dependency> 
+		<dependency> 
+			<groupId>org.codehaus.jackson</groupId> 
+			<artifactId>jackson-mapper-asl</artifactId> 
+			<version>1.9.13</version> 
+		</dependency>
+	ㄴ script 부분
+		ㄴ data : JSON.stringify(objectVariableName),
+		ㄴ contentType : "application/json; charset=UTF-8"
+	ㄴ controller 부분
+		ㄴ public Map functionName(@RequestBody HashMap hashMapName){...
+--------------------------------------------------------------------------------
 현재 작업 경로 가져오기 - javascript
 	ㄴ 사용방법
 		function getContextPath() {
