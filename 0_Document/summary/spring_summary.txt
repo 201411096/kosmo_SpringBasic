@@ -477,6 +477,13 @@ jquery autocomplete
 		    
 		</script>
 --------------------------------------------------------------------------------
+controller mapping
+	ㄴ 페이지 일일이 지정하지 않는 방법
+		@RequestMapping("/{step}.do")
+		public String viewPage(@PathVariable String step) {
+			return step;
+		}
+--------------------------------------------------------------------------------
 현재 작업 경로 가져오기 - javascript
 	ㄴ 사용방법
 		function getContextPath() {
