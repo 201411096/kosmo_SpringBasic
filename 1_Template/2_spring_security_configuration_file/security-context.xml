@@ -12,7 +12,7 @@
  
     <http auto-config='true' use-expressions="true">
         <intercept-url pattern="/**" requires-channel="https" access="permitAll" />
-        <!-- enable csrf protection -->
+        <!-- enable csrf protection 아래줄 지우고하기 -->
         <csrf />
     </http>
  
