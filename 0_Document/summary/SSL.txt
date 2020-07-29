@@ -70,3 +70,10 @@ keytool -importkeystore -srckeystore petcommunity -destkeystore petcommunity.p12
 openssl pkcs12 -in petcommunity.p12 -out petcommunity_cert.pem -clcerts -nokeys
 openssl pkcs12 -in petcommunity.p12 -out petcommunity_key.pem -nocerts -des
 ----------------------------------------------------------------------------------------------------
+jks to pfx
+
+사용방법
+keytool -importkeystore -srckeystore SecureSign.jks -srcstoretype JKS -srcstorepass "password" -destkeystore SecureSign.pfx -deststoretype PKCS12 -deststorepass "password"
+
+사용예시
+keytool -importkeystore -srckeystore petcommunity -srcstoretype JKS -srcstorepass 123456 -destkeystore petcommunity.pfx -deststoretype PKCS12 -deststorepass 123456
